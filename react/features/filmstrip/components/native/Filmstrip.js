@@ -98,39 +98,8 @@ class Filmstrip extends Component<Props> {
         return (
             <Container
                 style = { filmstripStyle }
-                visible = { _visible }>
-                {
-                    this._separateLocalThumbnail
-                        && !isNarrowAspectRatio
-                        && <LocalThumbnail />
-                }
-                <ScrollView
-                    horizontal = { isNarrowAspectRatio }
-                    showsHorizontalScrollIndicator = { false }
-                    showsVerticalScrollIndicator = { false }
-                    style = { styles.scrollView } >
-                    {
-                        !this._separateLocalThumbnail && !isNarrowAspectRatio
-                            && <LocalThumbnail />
-                    }
-                    {
-
-                        this._sort(_participants, isNarrowAspectRatio)
-                            .map(p => (
-                                <Thumbnail
-                                    key = { p.id }
-                                    participant = { p } />))
-
-                    }
-                    {
-                        !this._separateLocalThumbnail && isNarrowAspectRatio
-                            && <LocalThumbnail />
-                    }
-                </ScrollView>
-                {
-                    this._separateLocalThumbnail && isNarrowAspectRatio
-                        && <LocalThumbnail />
-                }
+                visible = { true }>
+                <LocalThumbnail />
             </Container>
         );
     }

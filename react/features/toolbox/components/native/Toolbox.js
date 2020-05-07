@@ -97,16 +97,13 @@ class Toolbox extends PureComponent<Props> {
      */
     _renderToolbar() {
         const { _styles } = this.props;
-        const { buttonStyles, buttonStylesBorderless, hangupButtonStyles, toggledButtonStyles } = _styles;
+        const { buttonStyles, hangupButtonStyles, toggledButtonStyles } = _styles;
 
         return (
             <View
                 accessibilityRole = 'toolbar'
                 pointerEvents = 'box-none'
                 style = { styles.toolbar }>
-                <ChatButton
-                    styles = { buttonStylesBorderless }
-                    toggledStyles = { this._getChatButtonToggledStyle(toggledButtonStyles) } />
                 <AudioMuteButton
                     styles = { buttonStyles }
                     toggledStyles = { toggledButtonStyles } />
@@ -114,9 +111,6 @@ class Toolbox extends PureComponent<Props> {
                     styles = { hangupButtonStyles } />
                 <VideoMuteButton
                     styles = { buttonStyles }
-                    toggledStyles = { toggledButtonStyles } />
-                <OverflowMenuButton
-                    styles = { buttonStylesBorderless }
                     toggledStyles = { toggledButtonStyles } />
             </View>
         );

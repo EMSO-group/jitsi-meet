@@ -274,7 +274,7 @@ class Conference extends AbstractConference<Props, *> {
                 <SafeAreaView
                     pointerEvents = 'box-none'
                     style = { styles.toolboxAndFilmstripContainer }>
-
+                    <Filmstrip />
                     { showGradient && <LinearGradient
                         colors = { NAVBAR_GRADIENT_COLORS }
                         end = {{
@@ -297,8 +297,6 @@ class Conference extends AbstractConference<Props, *> {
 
                     { _shouldDisplayTileView || <DisplayNameLabel participantId = { _largeVideoParticipantId } /> }
 
-                    <LonelyMeetingExperience />
-
                     {/*
                       * The Toolbox is in a stacking layer below the Filmstrip.
                       */}
@@ -312,7 +310,7 @@ class Conference extends AbstractConference<Props, *> {
                       * React Components depict the videos of the conference's
                       * participants.
                       */
-                        _shouldDisplayTileView ? undefined : <Filmstrip />
+                     
                     }
                 </SafeAreaView>
 
